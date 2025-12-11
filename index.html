@@ -16,7 +16,7 @@
     }
 
     .contenedor-poema {
-      max-width: 80%;
+      max-width: 45%;
       margin: 40px auto;
       padding: 30px;
       background: rgba(255, 255, 255, 0.75);
@@ -26,6 +26,12 @@
       font-size: 20px;
     }
 
+    @media (max-width: 768px) {
+.contenedor-poema {
+max-width: 80%;
+}
+
+}
     /* Clase para centrar texto y respetar espacios */
     .poema-text {
       text-align: center;
