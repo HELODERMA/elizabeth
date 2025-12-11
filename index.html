@@ -42,7 +42,9 @@ max-width: 80%;
 
 <body>
 
-  <audio src="./song.mp3" autoplay loop></audio>
+  <audio id="player" src="./song.mp3" loop></audio>
+  <button onclick="document.getElementById('player').play()">Reproducir música</button>
+
 
   <div class="contenedor-poema">
     <p style="text-align: center;">Sé que tenemos muy poco platicando, pero ya me gusta mucho platicar contigo.
@@ -239,6 +241,29 @@ max-width: 80%;
       Antonio Plaza Llamas</p>
   </div>
 
+  <script>
+    const audio = document.getElementById('player');
+    const poema = document.querySelector('.contenedor-poema');
+    
+    function activarPoema() {
+audio.play().catch(e => console.log('Interacción requerida para reproducir audio.'));
+}
+
+
+// Timer para activar automáticamente después de 2 segundos
+setTimeout(activarPoema, 2000);
+    </script>
+  <!-- <script>
+    const audio = document.getElementById('player');
+    const poema = document.querySelector('.contenedor-poema');
+    
+    
+    // Al primer clic, reproducir audio y mostrar poema
+    document.body.addEventListener('click', () => {
+    poema.style.display = 'block';
+    audio.play();
+    }, { once: true });
+    </script> -->
 </body>
 
 </html>
